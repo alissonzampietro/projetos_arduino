@@ -29,8 +29,8 @@ void loop() {
   
   digitalWrite(led,HIGH); // liberamos energia para o pino representado na variável LED
    if(flag == 2){
-    digitalWrite(pedestreNaoPassa,LOW);
     delay(800);
+    digitalWrite(pedestreNaoPassa,LOW);
     digitalWrite(pedestrePassa,HIGH);
   }
   delay(delays[flag]); // utilizamos a posição do flag para localizar quanto tempo deve demorar para a luz apagar
