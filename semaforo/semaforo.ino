@@ -8,6 +8,7 @@ void setup() {
   pinMode(pedestreNaoPassa,OUTPUT);
   pinMode(pedestrePassa,OUTPUT);
   pinMode(4,OUTPUT);
+  pinMode(7,OUTPUT);
   pinMode(8,OUTPUT);
   pinMode(12,OUTPUT);
 }
@@ -32,6 +33,9 @@ void loop() {
     delay(800);
     digitalWrite(pedestreNaoPassa,LOW);
     digitalWrite(pedestrePassa,HIGH);
+  }
+  if(flag == 1){
+    digitalWrite(7,HIGH);
   }
   delay(delays[flag]); // utilizamos a posição do flag para localizar quanto tempo deve demorar para a luz apagar
   digitalWrite(led,LOW); // cortamos energia para o pino representado na variável LED
