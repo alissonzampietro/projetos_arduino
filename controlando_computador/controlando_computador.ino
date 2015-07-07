@@ -18,24 +18,14 @@ void setup() {
   pinMode(certo,OUTPUT);
   pinMode(errado,OUTPUT);
   Serial.begin(9600);    //configura comunicação serial com 9600 bps
+  numeroPergunta = random(1,11);
+  Serial.print(numeroPergunta);
+  Serial.print(perguntas[numeroPergunta][0]);
+  Serial.print(perguntas[numeroPergunta][1]);
 }
  
 void loop() {
-    numeroPergunta = random(0,11);
-    Serial.print(perguntas[numeroPergunta][0]);
-    Serial.print(perguntas[numeroPergunta][1]);
-    resposta = perguntas[numeroPergunta][2];
-   if (Serial.available()) //se byte pronto para leitura
-   {
-    content.concat(Serial.read());
-    if(content == resposta){
-      digitalWrite(certo,HIGH);
-      delay(5000);
-      digitalWrite(certo,LOW);
-    }else{
-      digitalWrite(errado,HIGH);
-      delay(5000);
-      digitalWrite(errado,LOW);
-    }
-  }
 }
+
+
+    
