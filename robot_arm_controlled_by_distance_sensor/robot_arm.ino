@@ -1,13 +1,11 @@
 
 #include <Servo.h>
 
-const int SERVO_PIN = 6;
-const int TRIG_PIN = 11;
-const int ECHO_PIN = 10;
-int MOVEMENT_DURATION = 0;
-const int DISTANCE_TO_PICK = 20;
-
 Servo s;
+const int SERVO_PIN = 4;
+const int TRIG_PIN = 3;
+const int ECHO_PIN = 2;
+const int DISTANCE_TO_PICK = 20;
 long duration;
 int distance;
 int globalServoPosition = 0;
@@ -23,7 +21,6 @@ void setup (){
 void pick() {
     while(globalServoPosition < 180) {
       s.write(globalServoPosition);
-      delay(MOVEMENT_DURATION);
       globalServoPosition++;
     }
 }
@@ -31,7 +28,6 @@ void pick() {
 void drop() {
     while(globalServoPosition >= 0) {
       s.write(globalServoPosition);
-      delay(MOVEMENT_DURATION);
       globalServoPosition--;
     }
 }
